@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    $.ajax({
+        url: "http://localhost:8080/timingstation/001/json"
+    }).then(function(data) {
+        $('#timingstationID').append(data.timingstationID);
+        $('#timestamp').append(data.timestamp);
+    });
+});
+</script>
+<body>
+	<div id="timingstationID"></div>
+	<div id="timestamp"></div>
+</body>
+</html>
